@@ -6,7 +6,7 @@
 
 #https://janakiev.com/blog/jupyter-virtual-envs/
 #1) first activate the environment 
-source env_intro2python1920/bin/activate
+#source env_intro2python1920/bin/activate
 
 #[only first time]
 #2) might need to install ipykernel
@@ -20,6 +20,7 @@ source env_intro2python1920/bin/activate
 
 #4) Run jupyter
 jupyter notebook
+jupyter-lab
 
 
 deactivate
