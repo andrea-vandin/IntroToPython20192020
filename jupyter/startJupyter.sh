@@ -16,7 +16,7 @@ source env_intro2python1920/bin/activate
 
 #[only first time]
 #3) Next you can add your virtual environment to Jupyter by typing:
-#python3 -m ipykernel install --user --name=intro2python1920
+#python3 -m ipykernel install --user --name=env_intro2python1920
 
 #4) Run jupyter
 jupyter notebook
