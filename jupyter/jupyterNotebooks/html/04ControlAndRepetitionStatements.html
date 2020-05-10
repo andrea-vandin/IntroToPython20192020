@@ -13951,12 +13951,18 @@ Bye!
 <p>We now look at <a href="https://docs.python.org/3/reference/compound_stmts.html#the-for-statement"><code>for</code> loops</a></p>
 <ul>
 <li>They have pretty much the same expressive power of while loops, but make it easier the coding of certain computations<ul>
-<li>useful when you <em>know in advance</em> how many iterations you have to perform</li>
 <li>useful when you have to iterate over a collection</li>
 </ul>
 </li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Basic-usage">Basic usage<a class="anchor-link" href="#Basic-usage">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13994,6 +14000,41 @@ Bye!
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">&#39;ciao&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>c
+i
+a
+o
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14007,7 +14048,7 @@ Bye!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
@@ -14058,7 +14099,7 @@ Bye!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
@@ -14133,6 +14174,125 @@ The square of 9 is 81
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Nested-loops">Nested loops<a class="anchor-link" href="#Nested-loops">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Let&#39;s create a 3x3 matrix containing random values from 0 to 1</span>
+<span class="kn">import</span> <span class="nn">random</span> 
+<span class="n">n_rows</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_cols</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)</span> <span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="c1">#Let&#39;s pretty-print the created matrix</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%3.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#Let&#39;s compute some quantities on the matrix</span>
+<span class="n">maxm</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">minm</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">summ</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">maxm</span> <span class="p">:</span>
+            <span class="n">maxm</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">minm</span> <span class="p">:</span>
+            <span class="n">minm</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+        <span class="n">summ</span><span class="o">+=</span><span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum </span><span class="si">%3.2f</span><span class="s1">, Min </span><span class="si">%3.2f</span><span class="s1">, Max </span><span class="si">% 3.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">summ</span><span class="p">,</span><span class="n">minm</span><span class="p">,</span><span class="n">maxm</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[0.4331883172787703, 0.1641608814343407, 0.7895174831669074], [0.8625770428520116, 0.236452541153368, 0.9638371892346168], [0.11540572371809121, 0.12189889830284029, 0.8467039399044531]]
+0.43 0.16 0.79 
+0.86 0.24 0.96 
+0.12 0.12 0.85 
+Sum 4.53, Min 0.12, Max  0.96
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Iterating-over-more-collections-at-once-...">Iterating over more collections at once ...<a class="anchor-link" href="#Iterating-over-more-collections-at-once-...">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span><span class="o">=</span><span class="s2">&quot;12345&quot;</span>
+<span class="n">vowels</span><span class="o">=</span><span class="s2">&quot;aeiou&quot;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="n">vowels</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 a
+2 e
+3 i
+4 o
+5 u
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Two-subtleties-on-the-for-loop">Two subtleties on the <code>for</code> loop<a class="anchor-link" href="#Two-subtleties-on-the-for-loop">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Two subtleties on the <code>for</code> loop from <a href="https://docs.python.org/3/reference/compound_stmts.html#the-for-statement">here</a></p>
 <ul>
 <li>In my opinion it is not good practice to use these two features below, but you have to know about it to defend against it ;)</li>
@@ -14144,7 +14304,7 @@ The square of 9 is 81
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Subtlety 1: update value of iterating variable </span>
@@ -14258,7 +14418,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
@@ -14275,7 +14435,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -14343,7 +14503,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import sys</span>
@@ -14357,7 +14517,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import sys</span>
@@ -14371,7 +14531,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
@@ -14407,7 +14567,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fileName</span><span class="o">=</span><span class="s1">&#39;csv/covid19/dpc-covid19-ita-andamento-nazionale.csv&#39;</span>
@@ -14469,7 +14629,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
     <span class="n">currently_infected</span> <span class="o">=</span> <span class="p">[]</span>    
     <span class="n">tests</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">loadedData</span> <span class="o">=</span> <span class="p">[</span><span class="n">intensive_care</span><span class="p">,</span><span class="n">total_infected</span><span class="p">,</span><span class="n">currently_infected</span><span class="p">,</span><span class="n">tests</span><span class="p">]</span>
-    <span class="c1">#r = 0</span>
+
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="p">:</span>
         <span class="n">l</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels_of_interest</span><span class="p">:</span>
@@ -14477,9 +14637,6 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
             <span class="n">data</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
             <span class="n">loadedData</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
             <span class="n">l</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="c1">#r +=1</span>
-        <span class="c1">#if r&gt;=10 :</span>
-        <span class="c1">#    break</span>
 
 <span class="c1">#print(intensive_care)</span>
 <span class="c1">#print(total_infected)</span>
@@ -14500,7 +14657,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#We now create three plots</span>
@@ -14602,7 +14759,7 @@ print("NEVER DO SOMETHING LIKE THIS!!! \nOr you will regret it when spending hou
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">currently_infected</span><span class="p">)</span>
@@ -14641,7 +14798,7 @@ On the last measured day we have 87961 infected people
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">currently_infected</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Currently infected&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -14700,7 +14857,7 @@ On the last measured day we have 87961 infected people
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prevDay</span><span class="o">=</span><span class="mi">0</span>
@@ -14781,7 +14938,7 @@ On the last measured day we have 87961 infected people
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">:],</span><span class="n">daily_variation</span><span class="p">[</span><span class="n">d</span><span class="p">:],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Daily variation&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -14832,7 +14989,7 @@ On the last measured day we have 87961 infected people
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">deposit</span> <span class="o">=</span> <span class="mi">20</span>
@@ -14927,7 +15084,7 @@ This is very bad because:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">withdraw_amoount</span><span class="p">(</span><span class="n">deposit</span><span class="p">,</span><span class="n">withdraw</span><span class="p">):</span>
