@@ -1,6 +1,6 @@
 data,stato,ricoverati_con_sintomi,terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,tamponi,casi_testati,note_it,note_en
 2020-02-24T18:00:00,ITA,101,26,127,94,221,0,221,1,7,229,4324,,,
-2020-02-25T18:00:00,ITA,114,35,150,162,311,90,93,1,10,322,8623,,,
+2020-02-25T18:00:00,ITA,114,35,150,162,312,90,93,1,10,322,8623,,,
 2020-02-26T18:00:00,ITA,128,36,164,221,385,74,78,3,12,400,9587,,,
 2020-02-27T18:00:00,ITA,248,56,304,284,588,203,250,45,17,650,12014,,,
 2020-02-28T18:00:00,ITA,345,64,409,412,821,233,238,46,21,888,15695,,,
