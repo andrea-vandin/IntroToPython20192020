@@ -1,0 +1,17 @@
+begin model SIR_ODE
+ begin parameters
+  pBeta = 1
+  pGamma = 4
+ end parameters
+ begin init
+  S = 1000.0
+  I = 2.0
+  R
+ end init
+ begin ODE
+  d(S) = -pBeta*S*I
+  d(I) =  pBeta*S*I -pGamma*I
+  d(R) =             pGamma*I
+ end ODE
+end model
+
