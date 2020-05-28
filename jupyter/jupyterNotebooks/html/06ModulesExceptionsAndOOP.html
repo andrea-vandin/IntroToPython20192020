@@ -13077,7 +13077,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<center><font size="+4">Introduction to Programming in Python 2019/2020</font></center>
+<center><font size="+4">Introduction to Programming in Python</font></center>
+<center><font size="+4">2019/2020</font></center>
 <center><font size="+2">Sant'Anna School of Advanced Studies, Pisa, Italy</font></center><br/>
 
 <center><font size="+2">Course responsible</font></center>
@@ -13091,6 +13092,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center><font size="+4">Module 6: Modules,</font></center>
+<br/>
 <center><font size="+4"> Exceptions & OO Programming</font></center>
 <center><font size="+2"> With applications to Financial Betting Markets</font></center>
 </div>
@@ -14053,46 +14055,6 @@ Give me numerator and denominator, in two lines
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2.0
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Iteration 1 completed
-
-Give me numerator and denominator, in two lines
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
 <pre>The function divide requires two int. Try again
 </pre>
 </div>
@@ -14112,7 +14074,7 @@ Give me numerator and denominator, in two lines
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Iteration 2 completed
+<pre>Iteration 1 completed
 
 </pre>
 </div>
@@ -14138,7 +14100,7 @@ Give me numerator and denominator, in two lines
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Open a file to write in it (appending to previous text (a))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Open a file to write in it (appending to previous text (a))</span>
 <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
@@ -14222,14 +14184,150 @@ Give me numerator and denominator, in two lines
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-050febfe1f79&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">for</span> i <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">&lt;ipython-input-20-bad8feec27fa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Give me numerator and denominator, in two lines&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg">         </span>n <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         d <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span>         n <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">         </span>d <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      8</span>         res<span class="ansi-blue-fg">=</span>divide<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">,</span>d<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span>         file<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span>str<span class="ansi-blue-fg">(</span>res<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: &#39;sss&#39;</pre>
+<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: &#39;ssss&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a side-product, in the block above we have shown how to <a href="https://www.guru99.com/reading-and-writing-files-in-python.html">read and write on a file</a>.</p>
+<ol>
+<li>First we need to open it, specifying what we want to do with it<ul>
+<li>'a'  stands for: I want to write on the file, appending to the text present in it, if any. The file will be created if it does not exist</li>
+<li>'w'  stands for: I want to write on the file, overwriting the text present in it, if any. The file will be created if it does not exist        </li>
+<li>'r'  stands for: I want to read on the file. An exception is thrown if the file does not exist</li>
+<li>'w+' and 'a+' are like 'w' and 'a', resp., but they additionally allow to read from the file</li>
+</ul>
+</li>
+<li>There are methods to read from/write to files<ul>
+<li>Methods write(str) and writelines(lst) allows you to write on a file</li>
+<li>Methods write(str) and writelines(lst) allows you to write on a file</li>
+</ul>
+</li>
+<li>Finally you have to close the file </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;list&#39;&gt;
+0.5
+
+0.5
+
+0.3333333333333333
+
+0.5
+
+2.0
+
+2.0
+
+10.0
+
+1.0
+
+1.0
+
+1.5
+
+0.5
+
+0.5
+
+2.0
+
+2.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">whole_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">whole_content</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">whole_content</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;str&#39;&gt;
+0.5
+0.5
+0.3333333333333333
+0.5
+2.0
+2.0
+10.0
+1.0
+1.0
+1.5
+0.5
+0.5
+2.0
+2.0
+
+</pre>
 </div>
 </div>
 
@@ -14254,7 +14352,7 @@ Give me numerator and denominator, in two lines
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -14321,7 +14419,7 @@ No matter what, this block will be executed as last
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -14379,7 +14477,7 @@ No matter what, this block will be executed as last
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
@@ -14417,7 +14515,7 @@ width=800
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
@@ -14461,7 +14559,7 @@ width=800
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
@@ -14509,21 +14607,21 @@ Finally of top-level
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-25-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-27-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">     10</span> 
 <span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">     </span>func1<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     13</span> <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     14</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Finally of top-level&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-25-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func1</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-27-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func1</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> func1<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span>func2<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Finally of func1&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-25-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func2</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-27-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func2</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      6</span> 
 <span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">def</span> func2<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> ZeroDivisionError
@@ -14634,7 +14732,7 @@ Finally of top-level
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Individual</span><span class="p">:</span>
@@ -14724,7 +14822,7 @@ Finally of top-level
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">Individual</span><span class="p">)</span>
@@ -14805,7 +14903,7 @@ class Individual(builtins.object)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ambra</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="s1">&#39;Ambra&#39;</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span><span class="s2">&quot;Tennis&quot;</span><span class="p">)</span>
@@ -14882,7 +14980,7 @@ Ambra is 26
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ambra</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="s1">&#39;Ambra&#39;</span><span class="p">)</span>
@@ -14938,7 +15036,7 @@ The name is _wrongName
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">andrea</span><span class="o">.</span><span class="n">surname</span> <span class="o">=</span> <span class="s1">&#39;Vandin&#39;</span>
@@ -14992,7 +15090,7 @@ The name is _wrongName
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Individual</span><span class="p">):</span>
@@ -15023,7 +15121,7 @@ The name is _wrongName
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">marco</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Marco&#39;</span><span class="p">,</span><span class="mi">1984</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="s1">&#39;SSSA&#39;</span><span class="p">)</span>
@@ -15071,7 +15169,7 @@ Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SportClub</span><span class="p">:</span>
@@ -15096,7 +15194,7 @@ Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rugby_lovers</span> <span class="o">=</span> <span class="n">SportClub</span><span class="p">(</span><span class="s1">&#39;RubgyLovers&#39;</span><span class="p">)</span>
@@ -15167,7 +15265,7 @@ Marco, born in 1984, studies at SSSA with id 123. Marco loves Rubgy
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
@@ -15247,7 +15345,7 @@ width=1000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">:</span>
@@ -15324,7 +15422,7 @@ width=1000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">AgentWithException</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
@@ -15369,7 +15467,7 @@ width=1000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -15437,7 +15535,7 @@ width=1000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed</span><span class="o">=</span><span class="mi">3</span> 
@@ -15522,7 +15620,7 @@ t=100000 priceT=0.65
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">NoiseTraderAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
@@ -15553,7 +15651,7 @@ t=100000 priceT=0.65
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed</span><span class="o">=</span><span class="mi">3</span> 
