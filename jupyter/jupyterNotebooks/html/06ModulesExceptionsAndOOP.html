@@ -13092,8 +13092,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <center><font size="+4">Module 6: Modules,</font></center>
 <center><font size="+4"> Exceptions & OO Programming</font></center>
-<center><font size="+2"> With applications to</font></center>
-<center><font size="+2"> Financial Betting Markets</font></center>
+<center><font size="+2"> With applications to Financial Betting Markets</font></center>
 </div>
 </div>
 </div>
@@ -13425,8 +13424,8 @@ width=300
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">other.test_import_py_Copy1</span>
-<span class="n">other</span><span class="o">.</span><span class="n">test_import_py_Copy1</span><span class="o">.</span><span class="n">my_function2</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">otherpath.test_import_py_Copy1</span>
+<span class="n">otherpath</span><span class="o">.</span><span class="n">test_import_py_Copy1</span><span class="o">.</span><span class="n">my_function2</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13451,6 +13450,63 @@ width=300
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, note that if you don't like the name of the module</p>
+<ul>
+<li>e.g. because it is too long</li>
+<li>you can load and rename it as we did above with matplotlib</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">otherpath.test_import_py_Copy1</span> <span class="k">as</span> <span class="nn">tic</span>
+<span class="n">tic</span><span class="o">.</span><span class="n">my_function2</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Successfully imported2!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note</strong> For efficiency reasons, each module is only imported once per interpreter session. 
+Therefore, if you change your modules, you must restart the interpreter – or, if it’s just one module you want to test interactively, use importlib.reload(), e.g.</p>
+<ul>
+<li>import importlib</li>
+<li>importlib.reload(modulename).</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13480,7 +13536,7 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> test_import_nb.ipynb
@@ -13501,7 +13557,7 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_function_nb</span><span class="p">()</span>
@@ -13543,10 +13599,10 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> other/test_import_nb_Copy1.ipynb
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> otherpath/test_import_nb_Copy1.ipynb
 </pre></div>
 
     </div>
@@ -13556,7 +13612,7 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_function_nb2</span><span class="p">()</span>
@@ -13616,7 +13672,7 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
@@ -13652,7 +13708,7 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;ciao&quot;</span>
@@ -13711,7 +13767,7 @@ width=300
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -13750,7 +13806,7 @@ This is the thrown exception: unsupported operand type(s) for /: &#39;int&#39; a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">whattodo</span> <span class="o">=</span> <span class="s1">&#39;continue&#39;</span>
@@ -13803,7 +13859,7 @@ This is the thrown exception: unsupported operand type(s) for /: &#39;int&#39; a
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.5
+<pre>0.6666666666666666
 </pre>
 </div>
 </div>
@@ -13865,7 +13921,7 @@ Give me numerator and denominator, in two lines
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.5
+<pre>2.0
 </pre>
 </div>
 </div>
@@ -13942,11 +13998,11 @@ Give me numerator and denominator, in two lines
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">whattodo</span> <span class="o">=</span> <span class="s1">&#39;continue&#39;</span>
-<span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="n">whattodo</span> <span class="o">!=</span> <span class="s1">&#39;stop&#39;</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Give me numerator and denominator, in two lines&#39;</span><span class="p">)</span>
@@ -13959,6 +14015,7 @@ Give me numerator and denominator, in two lines
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The function divide requires two int. Try again&#39;</span><span class="p">)</span>
     <span class="k">finally</span><span class="p">:</span>
         <span class="n">whattodo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Write &#39;stop&#39; if you want to terminate&quot;</span><span class="p">)</span>
+        <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iteration&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;completed&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>    
 </pre></div>
@@ -13996,7 +14053,7 @@ Give me numerator and denominator, in two lines
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The function divide requires two int. Try again
+<pre>2.0
 </pre>
 </div>
 </div>
@@ -14016,6 +14073,46 @@ Give me numerator and denominator, in two lines
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Iteration 1 completed
+
+Give me numerator and denominator, in two lines
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The function divide requires two int. Try again
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Iteration 2 completed
 
 </pre>
 </div>
@@ -14038,7 +14135,7 @@ Give me numerator and denominator, in two lines
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Open a file to write in it (appending to previous text (a))</span>
@@ -14112,8 +14209,27 @@ Give me numerator and denominator, in two lines
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Closing the file
-This code will not be executed in case of exception, But we have the guarantee to have closed the file.
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-20-050febfe1f79&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">for</span> i <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Give me numerator and denominator, in two lines&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg">         </span>n <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span>         d <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         res<span class="ansi-blue-fg">=</span>divide<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">,</span>d<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: &#39;sss&#39;</pre>
 </div>
 </div>
 
@@ -14138,7 +14254,7 @@ This code will not be executed in case of exception, But we have the guarantee t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -14205,7 +14321,7 @@ No matter what, this block will be executed as last
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -14263,7 +14379,7 @@ No matter what, this block will be executed as last
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
@@ -14301,7 +14417,7 @@ width=800
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
@@ -14345,7 +14461,7 @@ width=800
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
@@ -14393,21 +14509,21 @@ Finally of top-level
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-24-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-25-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">     10</span> 
 <span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">     </span>func1<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     13</span> <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     14</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Finally of top-level&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-24-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func1</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-25-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func1</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> func1<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span>func2<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Finally of func1&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-24-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func2</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-25-96a271e48f4a&gt;</span> in <span class="ansi-cyan-fg">func2</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      6</span> 
 <span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-green-fg">def</span> func2<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> ZeroDivisionError
@@ -14510,7 +14626,7 @@ Finally of top-level
 <p>A class <code>C</code> specifies</p>
 <ul>
 <li>The type of data that every object of class <code>C</code> will contain</li>
-<li>A numer of functions, or <em>methods</em> that can be used on objects of class <code>C</code> to access and modify such data</li>
+<li>A number of functions, or <em>methods</em> that can be used on objects of class <code>C</code> to access and modify such data</li>
 </ul>
 
 </div>
@@ -14518,41 +14634,41 @@ Finally of top-level
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Individual</span><span class="p">:</span>
     <span class="n">current_year</span> <span class="o">=</span> <span class="mi">2020</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">birth_year</span><span class="p">,</span><span class="n">favourite_sport</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">birth_year</span><span class="o">=</span><span class="n">birth_year</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">favourite_sport</span><span class="o">=</span><span class="n">favourite_sport</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_birth_year</span><span class="o">=</span><span class="n">birth_year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_favourite_sport</span><span class="o">=</span><span class="n">favourite_sport</span>
         
-    <span class="k">def</span> <span class="nf">getName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
     
-    <span class="k">def</span> <span class="nf">setName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">new_name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">new_name</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">new_name</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">new_name</span><span class="p">,</span><span class="s1">&#39;is not admissible&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">new_name</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">=</span><span class="n">new_name</span>
     
-    <span class="k">def</span> <span class="nf">getAge</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Individual</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">birth_year</span>
+    <span class="k">def</span> <span class="nf">compute_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Individual</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_birth_year</span>
     
-    <span class="k">def</span> <span class="nf">getSport</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">favourite_sport</span>
+    <span class="k">def</span> <span class="nf">get_sport</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_favourite_sport</span>
     
-    <span class="k">def</span> <span class="nf">setSport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">new_favourite_sport</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">favourite_sport</span><span class="o">=</span><span class="n">new_favourite_sport</span>
+    <span class="k">def</span> <span class="nf">set_sport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">new_favourite_sport</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_favourite_sport</span><span class="o">=</span><span class="n">new_favourite_sport</span>
     
     <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;, born in &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">birth_year</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span>
-        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">favourite_sport</span> <span class="o">==</span> <span class="s1">&#39;None&#39;</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;, born in &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_birth_year</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_favourite_sport</span> <span class="o">==</span> <span class="s1">&#39;None&#39;</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="s1">&#39;does not like sport&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="s1">&#39;likes&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">getSport</span><span class="p">())</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="s1">&#39;likes&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">get_sport</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -14575,21 +14691,25 @@ Finally of top-level
 </ul>
 </li>
 <li>We invoke a method <code>m</code> on an object <code>o</code> by using the <em>dot notation</em> <code>o.m()</code><ul>
-<li><code>andrea.print()</code></li>
-<li><code>andrea.setJob('SSSA')</code></li>
+<li><code>o.print()</code></li>
+<li><code>o.set_sport('Rugby')</code></li>
 </ul>
 </li>
 <li><code>__init__</code> is the constructor of the class. It is executed every time we create a new object<ul>
-<li><code>andrea = Individual('Andrea',1984,'DTU')</code></li>
+<li><code>o = Individual('Andrea',1984,'Rugby')</code></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><strong>3 attributes</strong> attached to objects<ul>
-<li>The <code>name</code> of the individual</li>
-<li>The <code>birth_year</code> of the individual</li>
-<li>The <code>job_place</code> of the individual if any, or initialized to <code>'Unemployed'</code> otherwise</li>
+<li>The <code>_name</code> of the individual</li>
+<li>The <code>_birth_year</code> of the individual</li>
+<li>The <code>_favourite_sport</code> of the individual if any, or initialized to <code>'None'</code> otherwise</li>
 <li><strong>NOTE: every object has its own value for these attributes</strong></li>
+<li><strong>NOTE: by convention, attributes that should be considered private to an object (i.e., 'hidden' or unaccessible from outside the object should begin with underscoreevery object has its own value for these attributes</strong><ul>
+<li>Other OOP languages allow to explicitly label attributes as public or private. In my opiniion, this is a <strong>not nice aspect of Python</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>1 attribute</strong> attached to the class<ul>
@@ -14604,7 +14724,7 @@ Finally of top-level
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">Individual</span><span class="p">)</span>
@@ -14634,17 +14754,17 @@ class Individual(builtins.object)
  |  __init__(self, name, birth_year, favourite_sport=&#39;None&#39;)
  |      Initialize self.  See help(type(self)) for accurate signature.
  |  
- |  getAge(self)
+ |  compute_age(self)
  |  
- |  getName(self)
+ |  get_name(self)
  |  
- |  getSport(self)
+ |  get_sport(self)
  |  
  |  print(self)
  |  
- |  setName(self, new_name)
+ |  set_name(self, new_name)
  |  
- |  setSport(self, new_favourite_sport)
+ |  set_sport(self, new_favourite_sport)
  |  
  |  ----------------------------------------------------------------------
  |  Data descriptors defined here:
@@ -14688,22 +14808,22 @@ class Individual(builtins.object)
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ambra</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="s1">&#39;Ambra&#39;</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span><span class="s2">&quot;Universita&#39; di Pisa&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ambra</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="s1">&#39;Ambra&#39;</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span><span class="s2">&quot;Tennis&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ambra</span><span class="p">))</span>
 <span class="n">ambra</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 
 <span class="n">andrea</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="s1">&#39;Andrea&#39;</span><span class="p">,</span><span class="mi">1984</span><span class="p">)</span>
 <span class="n">andrea</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 
-<span class="n">andrea</span><span class="o">.</span><span class="n">setSport</span><span class="p">(</span><span class="s1">&#39;Rugby&#39;</span><span class="p">)</span>
+<span class="n">andrea</span><span class="o">.</span><span class="n">set_sport</span><span class="p">(</span><span class="s1">&#39;Rugby&#39;</span><span class="p">)</span>
 <span class="n">andrea</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 
 <span class="n">Individual</span><span class="o">.</span><span class="n">current_year</span><span class="o">=</span><span class="mi">2020</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Andrea is&quot;</span><span class="p">,</span><span class="n">andrea</span><span class="o">.</span><span class="n">getAge</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ambra is&quot;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">getAge</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Andrea is&quot;</span><span class="p">,</span><span class="n">andrea</span><span class="o">.</span><span class="n">compute_age</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ambra is&quot;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">compute_age</span><span class="p">())</span>
 <span class="n">Individual</span><span class="o">.</span><span class="n">current_year</span><span class="o">=</span><span class="mi">2010</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Andrea is&quot;</span><span class="p">,</span><span class="n">andrea</span><span class="o">.</span><span class="n">getAge</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ambra is&quot;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">getAge</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Andrea is&quot;</span><span class="p">,</span><span class="n">andrea</span><span class="o">.</span><span class="n">compute_age</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ambra is&quot;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">compute_age</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -14721,7 +14841,7 @@ class Individual(builtins.object)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;__main__.Individual&#39;&gt;
-Ambra, born in 1984, likes Universita&#39; di Pisa
+Ambra, born in 1984, likes Tennis
 Andrea, born in 1984, does not like sport
 Andrea, born in 1984, likes Rugby
 Andrea is 36
@@ -14739,10 +14859,22 @@ Ambra is 26
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Beware! A <strong>not nice feature</strong> of Python is that it cannot actually <em>hide</em> attributes</p>
+<h3 id="Two-'not-nice-Pyhton-features'-(IMHO)">Two 'not nice Pyhton features' (IMHO)<a class="anchor-link" href="#Two-'not-nice-Pyhton-features'-(IMHO)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remember: a <strong>not nice feature</strong> of Python is that it cannot actually <em>hide</em> attributes</p>
 <ul>
 <li>A feature common of most of OO languages</li>
 <li>Gives you guarantee of modularization</li>
+<li>In Python, this is cannot be imposed. <ul>
+<li>We only have the naming convention to use '_' for attributes that should be private</li>
+<li>Then we have to hope that future developers will consider such attributes as private</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -14753,18 +14885,18 @@ Ambra is 26
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ambra</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;Ambra&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ambra</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="s1">&#39;Ambra&#39;</span><span class="p">)</span>
 
 <span class="c1">#No problems here</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ambra</span><span class="o">.</span><span class="n">getName</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ambra</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ambra</span><span class="o">.</span><span class="n">get_name</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ambra</span><span class="o">.</span><span class="n">_name</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1">#But what about here? You can&#39;t guarantee that the name is admissible</span>
-<span class="n">ambra</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;_wrongName&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The name is&#39;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ambra</span><span class="o">.</span><span class="n">set_name</span><span class="p">(</span><span class="s1">&#39;_wrongName&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The name is&#39;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">ambra</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;_wrongName&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The name is&#39;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">getName</span><span class="p">())</span>
+<span class="n">ambra</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;_wrongName&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The name is&#39;</span><span class="p">,</span><span class="n">ambra</span><span class="o">.</span><span class="n">get_name</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -14865,22 +14997,22 @@ The name is _wrongName
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Individual</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">birth_year</span><span class="p">,</span><span class="n">student_id</span><span class="p">,</span><span class="n">university</span><span class="p">,</span><span class="n">favourite_sport</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">birth_year</span><span class="o">=</span><span class="n">birth_year</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">favourite_sport</span><span class="o">=</span><span class="n">favourite_sport</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">university</span><span class="o">=</span><span class="n">university</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">student_id</span><span class="o">=</span><span class="n">student_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_birth_year</span><span class="o">=</span><span class="n">birth_year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_favourite_sport</span><span class="o">=</span><span class="n">favourite_sport</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_university</span><span class="o">=</span><span class="n">university</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_student_id</span><span class="o">=</span><span class="n">student_id</span>
     
-    <span class="k">def</span> <span class="nf">getUniversity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">university</span>
+    <span class="k">def</span> <span class="nf">get_university</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_university</span>
     
-    <span class="k">def</span> <span class="nf">getStudentId</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">student_id</span>
+    <span class="k">def</span> <span class="nf">get_student_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_student_id</span>
     
     <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;, born in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">birth_year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, studies at &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getUniversity</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; with id &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getStudentId</span><span class="p">())</span>
-        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">favourite_sport</span><span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot; loves &quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">getSport</span><span class="p">()</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;, born in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_birth_year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, studies at &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_university</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; with id &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_student_id</span><span class="p">())</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_sport</span><span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot; loves &quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">get_sport</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 
@@ -14897,7 +15029,7 @@ The name is _wrongName
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">marco</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Marco&#39;</span><span class="p">,</span><span class="mi">1984</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="s1">&#39;SSSA&#39;</span><span class="p">)</span>
 <span class="n">marco</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 
-<span class="n">marco</span><span class="o">.</span><span class="n">setSport</span><span class="p">(</span><span class="s1">&#39;Rubgy&#39;</span><span class="p">)</span>
+<span class="n">marco</span><span class="o">.</span><span class="n">set_sport</span><span class="p">(</span><span class="s1">&#39;Rubgy&#39;</span><span class="p">)</span>
 <span class="n">marco</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 
 <span class="n">marta</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Marta&#39;</span><span class="p">,</span><span class="mi">1984</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="s1">&#39;SSSA&#39;</span><span class="p">,</span><span class="s1">&#39;Tennis&#39;</span><span class="p">)</span>
@@ -14918,7 +15050,7 @@ The name is _wrongName
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Marco, born in 1984, studies at SSSA with id 123
+<pre>Marco, born in 1984, studies at SSSA with id 123. Marco loves None
 Marco, born in 1984, studies at SSSA with id 123. Marco loves Rubgy
 Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 </pre>
@@ -14942,17 +15074,17 @@ Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">University</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SportClub</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">members</span><span class="o">=</span><span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_members</span><span class="o">=</span><span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">addMember</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">individual</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">members</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">individual</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">add_member</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">individual</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_members</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">individual</span><span class="p">)</span>
     
     <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; has&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">members</span><span class="p">),</span><span class="s1">&#39;members:&#39;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">members</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">+</span> <span class="s1">&#39; has&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_members</span><span class="p">),</span><span class="s1">&#39;members:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_members</span><span class="p">:</span>
             <span class="c1">#We don&#39;t know if we are invoking Individual.print or Student.print</span>
             <span class="n">m</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </pre></div>
@@ -14967,13 +15099,13 @@ Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sssa</span> <span class="o">=</span> <span class="n">University</span><span class="p">(</span><span class="s1">&#39;SSSA&#39;</span><span class="p">)</span>
-<span class="n">sssa</span><span class="o">.</span><span class="n">addMember</span><span class="p">(</span><span class="n">andrea</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rugby_lovers</span> <span class="o">=</span> <span class="n">SportClub</span><span class="p">(</span><span class="s1">&#39;RubgyLovers&#39;</span><span class="p">)</span>
+<span class="c1">#Add the Individual andrea</span>
+<span class="n">rugby_lovers</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">andrea</span><span class="p">)</span>
+<span class="c1">#Add the Student marco</span>
+<span class="n">rugby_lovers</span><span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">marco</span><span class="p">)</span>
 
-<span class="n">sssa</span><span class="o">.</span><span class="n">addMember</span><span class="p">(</span><span class="n">marco</span><span class="p">)</span>
-<span class="n">sssa</span><span class="o">.</span><span class="n">addMember</span><span class="p">(</span><span class="n">marta</span><span class="p">)</span>
-
-<span class="n">sssa</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+<span class="n">rugby_lovers</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14990,10 +15122,9 @@ Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>SSSA has 3 members:
+<pre>RubgyLovers has 2 members:
 Andrea, born in 1984, likes Rugby
 Marco, born in 1984, studies at SSSA with id 123. Marco loves Rubgy
-Marta, born in 1984, studies at SSSA with id 124. Marta loves Tennis
 </pre>
 </div>
 </div>
@@ -15088,7 +15219,7 @@ width=1000
 <li>Each agent decides on what to bet, and how much to bet, depending on some factors<ul>
 <li><em>What to bet</em>: Each agent has an opinion about the probability of <code>evt</code>, stored in the attribute <code>belief</code></li>
 <li><em>How much to bet</em>: All agents share a common <em>propensity to bet</em> <code>betPropensity</code><ul>
-<li>It is value from 0 to 1</li>
+<li>It is a value from 0 to 1</li>
 <li>The higher is this value, the higher percentage of wealth agents will bet</li>
 </ul>
 </li>
@@ -15102,6 +15233,14 @@ width=1000
 </ul>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We begin defining the agents placing bets</p>
 
 </div>
 </div>
@@ -15220,6 +15359,14 @@ width=1000
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can now define the market</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
@@ -15279,6 +15426,14 @@ width=1000
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's create a Market instance, and perform some simulations</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -15343,9 +15498,23 @@ t=100000 priceT=0.65
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us now consider a so-called <em>Noise trader agent</em></p>
+<p>Let us now consider a so-called <em>Noise trader</em></p>
 <ul>
 <li>One agent takes takes decisions using <em>uninformative data</em> </li>
+<li>A more precise definition can be found <a href="https://www.sciencedirect.com/topics/economics-econometrics-and-finance/noise-trading">here</a><blockquote><p>Noise traders trade on the basis of what they falsely believe to be special information or misinterpret useful information concerning the future price or payoffs of a risky asset.</p>
+</blockquote>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are going to conside a noise trader who changes his/her belief before every bet...</p>
+<ul>
+<li>according to what the horoscope says :D</li>
 </ul>
 
 </div>
@@ -15401,15 +15570,14 @@ t=100000 priceT=0.65
 <span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 
-<span class="c1"># for step in range(35):</span>
-<span class="c1">#     print(&#39;Step&#39;,str(step+1))</span>
-<span class="c1">#     market.performOneStep()</span>
-<span class="c1">#     print(market)</span>
-
-<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">35</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">market</span><span class="o">.</span><span class="n">performOneStep</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
+
+<span class="c1"># for step in range(100000):</span>
+<span class="c1">#     market.performOneStep()</span>
+<span class="c1"># print(market)</span>
 </pre></div>
 
     </div>
@@ -15430,26 +15598,115 @@ t=100000 priceT=0.65
 t=0 priceT=0
    w0=0.5 w1=0.5
 
-t=100000 priceT=0.8
-   w0=1.0 w1=0.0
-
+Step 1
+t=1 priceT=0.6
+   w0=0.55 w1=0.45
+Step 2
+t=2 priceT=0.68
+   w0=0.59 w1=0.41
+Step 3
+t=3 priceT=0.72
+   w0=0.73 w1=0.27
+Step 4
+t=4 priceT=0.6
+   w0=0.73 w1=0.27
+Step 5
+t=5 priceT=0.81
+   w0=0.8 w1=0.2
+Step 6
+t=6 priceT=0.69
+   w0=0.71 w1=0.29
+Step 7
+t=7 priceT=0.71
+   w0=0.6 w1=0.4
+Step 8
+t=8 priceT=0.67
+   w0=0.73 w1=0.27
+Step 9
+t=9 priceT=0.62
+   w0=0.72 w1=0.28
+Step 10
+t=10 priceT=0.82
+   w0=0.73 w1=0.27
+Step 11
+t=11 priceT=0.78
+   w0=0.49 w1=0.51
+Step 12
+t=12 priceT=0.43
+   w0=0.43 w1=0.57
+Step 13
+t=13 priceT=0.68
+   w0=0.61 w1=0.39
+Step 14
+t=14 priceT=0.5
+   w0=0.52 w1=0.48
+Step 15
+t=15 priceT=0.64
+   w0=0.56 w1=0.44
+Step 16
+t=16 priceT=0.83
+   w0=0.65 w1=0.35
+Step 17
+t=17 priceT=0.84
+   w0=0.65 w1=0.35
+Step 18
+t=18 priceT=0.8
+   w0=0.63 w1=0.37
+Step 19
+t=19 priceT=0.85
+   w0=0.36 w1=0.64
+Step 20
+t=20 priceT=0.35
+   w0=0.54 w1=0.46
+Step 21
+t=21 priceT=0.53
+   w0=0.43 w1=0.57
+Step 22
+t=22 priceT=0.59
+   w0=0.54 w1=0.46
+Step 23
+t=23 priceT=0.57
+   w0=0.63 w1=0.37
+Step 24
+t=24 priceT=0.65
+   w0=0.66 w1=0.34
+Step 25
+t=25 priceT=0.73
+   w0=0.65 w1=0.35
+Step 26
+t=26 priceT=0.84
+   w0=0.74 w1=0.26
+Step 27
+t=27 priceT=0.83
+   w0=0.86 w1=0.14
+Step 28
+t=28 priceT=0.83
+   w0=0.69 w1=0.31
+Step 29
+t=29 priceT=0.6
+   w0=0.75 w1=0.25
+Step 30
+t=30 priceT=0.84
+   w0=0.65 w1=0.35
+Step 31
+t=31 priceT=0.72
+   w0=0.45 w1=0.55
+Step 32
+t=32 priceT=0.48
+   w0=0.39 w1=0.61
+Step 33
+t=33 priceT=0.66
+   w0=0.56 w1=0.44
+Step 34
+t=34 priceT=0.48
+   w0=0.63 w1=0.37
+Step 35
+t=35 priceT=0.87
+   w0=0.63 w1=0.37
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
