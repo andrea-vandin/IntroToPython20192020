@@ -13923,7 +13923,7 @@ Give me numerator and denominator, in two lines
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2.0
+<pre>0.6666666666666666
 </pre>
 </div>
 </div>
@@ -14171,27 +14171,8 @@ Give me numerator and denominator, in two lines
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Closing the file
+This code will not be executed in case of exception, But we have the guarantee to have closed the file.
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-bad8feec27fa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Give me numerator and denominator, in two lines&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>         n <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">         </span>d <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span>         res<span class="ansi-blue-fg">=</span>divide<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">,</span>d<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>         file<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span>str<span class="ansi-blue-fg">(</span>res<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: &#39;ssss&#39;</pre>
 </div>
 </div>
 
@@ -14278,6 +14259,10 @@ Give me numerator and denominator, in two lines
 
 2.0
 
+0.6666666666666666
+
+0.5
+
 </pre>
 </div>
 </div>
@@ -14326,6 +14311,8 @@ Give me numerator and denominator, in two lines
 0.5
 2.0
 2.0
+0.6666666666666666
+0.5
 
 </pre>
 </div>
@@ -15095,9 +15082,10 @@ The name is _wrongName
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Individual</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">birth_year</span><span class="p">,</span><span class="n">student_id</span><span class="p">,</span><span class="n">university</span><span class="p">,</span><span class="n">favourite_sport</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_birth_year</span><span class="o">=</span><span class="n">birth_year</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_favourite_sport</span><span class="o">=</span><span class="n">favourite_sport</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Student</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">birth_year</span><span class="p">,</span><span class="n">favourite_sport</span><span class="p">)</span>
+        <span class="c1">#self._name=name</span>
+        <span class="c1">#self._birth_year=birth_year</span>
+        <span class="c1">#self._favourite_sport=favourite_sport</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_university</span><span class="o">=</span><span class="n">university</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_student_id</span><span class="o">=</span><span class="n">student_id</span>
     
@@ -15350,18 +15338,18 @@ width=1000
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">=</span><span class="n">w</span> <span class="c1">#my current amount of money</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">belief</span><span class="o">=</span><span class="n">b</span> <span class="c1">#my belief on the probability of evt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">=</span><span class="n">w</span> <span class="c1">#my current amount of money</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_belief</span><span class="o">=</span><span class="n">b</span> <span class="c1">#my belief on the probability of evt</span>
         
-    <span class="k">def</span> <span class="nf">getWealth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span>
+    <span class="k">def</span> <span class="nf">get_wealth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span>
         
-    <span class="k">def</span> <span class="nf">getBelief</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">belief</span>
+    <span class="k">def</span> <span class="nf">get_belief</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_belief</span>
     
-    <span class="k">def</span> <span class="nf">normalizeWealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">totW</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">normalize_wealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">totW</span><span class="p">):</span>
         <span class="k">if</span><span class="p">(</span><span class="n">totW</span><span class="o">!=</span><span class="mi">0</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">/</span><span class="n">totW</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">/</span><span class="n">totW</span>
     
     <span class="c1">#evtAtT=true: </span>
     <span class="c1">#    evt realized at time t</span>
@@ -15375,28 +15363,28 @@ width=1000
     <span class="c1">#    Price to place a bet &#39;evt does not realize&#39;</span>
     <span class="c1">#    The bet is a contratto which pays 1 if evt does not happen</span>
     
-    <span class="k">def</span> <span class="nf">updateWealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">evtAtT</span><span class="p">,</span><span class="n">betPropensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">update_wealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">evtT</span><span class="p">,</span><span class="n">bet_propensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">):</span>
         <span class="n">portfolio</span><span class="o">=</span><span class="mi">0</span>
-        <span class="k">if</span> <span class="n">evtAtT</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">evtT</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">priceT</span><span class="o">!=</span><span class="mi">0</span> <span class="p">:</span>    
                 <span class="c1">#I encode the fact that the agent placed a bet on the event happening</span>
                 <span class="c1">#  strategy is the % of wealth bet on the event happening</span>
                 <span class="c1">#  This is an example of fractional Kelly strategy</span>
                 <span class="c1">#    (1-betPropensity)*pt is the part of wealth I want to keep safe in my pocket :D</span>
                 <span class="c1">#    betPropensity*self.belief is how much I want to bet</span>
-                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">betPropensity</span><span class="p">)</span><span class="o">*</span><span class="n">priceT</span> <span class="o">+</span> <span class="n">betPropensity</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">belief</span>
+                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">bet_propensity</span><span class="p">)</span><span class="o">*</span><span class="n">priceT</span> <span class="o">+</span> <span class="n">bet_propensity</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_belief</span>
                 <span class="c1">#Numerator  : how much wealth I bet</span>
                 <span class="c1">#Denumerator: prize of the bet/contract</span>
                 <span class="c1">#portfolio: number of bets/contracts bought</span>
-                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">/</span><span class="n">priceT</span>
+                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">/</span><span class="n">priceT</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="mi">1</span><span class="o">-</span><span class="n">priceT</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">:</span>
-                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">betPropensity</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span> <span class="o">+</span> <span class="n">betPropensity</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">belief</span><span class="p">)</span>
-                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span>   
+                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">bet_propensity</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span> <span class="o">+</span> <span class="n">bet_propensity</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_belief</span><span class="p">)</span>
+                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span>   
         <span class="c1">#My new wealth is the portfolio itself. Because: </span>
         <span class="c1">#  Each contract/bet pays 1. </span>
         <span class="c1">#  My wealth saved in the pocket is included in the portfolio.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">=</span> <span class="n">portfolio</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">=</span> <span class="n">portfolio</span>
 </pre></div>
 
     </div>
@@ -15427,29 +15415,29 @@ width=1000
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">AgentWithException</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
     
-    <span class="k">def</span> <span class="nf">updateWealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">evtAtT</span><span class="p">,</span><span class="n">betPropensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">update_wealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">evtT</span><span class="p">,</span><span class="n">bet_propensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">):</span>
         <span class="n">portfolio</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">evtAtT</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">evtT</span><span class="p">:</span>
                 <span class="c1">#I encode the fact that the agent placed a bet on the event happening</span>
                 <span class="c1">#  strategy is the % of wealth bet on the event happening</span>
                 <span class="c1">#  This is an example of fractional Kelly strategy</span>
                 <span class="c1">#    (1-betPropensity)*pt is the part of wealth I want to keep safe in my pocket :D</span>
                 <span class="c1">#    betPropensity*self.belief is how much I want to bet</span>
-                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">betPropensity</span><span class="p">)</span><span class="o">*</span><span class="n">priceT</span> <span class="o">+</span> <span class="n">betPropensity</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">belief</span>
+                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">bet_propensity</span><span class="p">)</span><span class="o">*</span><span class="n">priceT</span> <span class="o">+</span> <span class="n">bet_propensity</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_belief</span>
                 <span class="c1">#Numerator  : how much wealth I bet</span>
                 <span class="c1">#Denumerator: prize of the bet/contract</span>
                 <span class="c1">#portfolio: number of bets/contracts bought</span>
-                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">/</span><span class="n">priceT</span>
+                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">/</span><span class="n">priceT</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">betPropensity</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span> <span class="o">+</span> <span class="n">betPropensity</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">belief</span><span class="p">)</span>
-                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span>   
+                <span class="n">strategy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">bet_propensity</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span> <span class="o">+</span> <span class="n">bet_propensity</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_belief</span><span class="p">)</span>
+                <span class="n">portfolio</span> <span class="o">=</span> <span class="n">strategy</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">priceT</span><span class="p">)</span>   
         <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
             <span class="n">portfolio</span><span class="o">=</span><span class="mi">0</span>
         <span class="c1">#My new wealth is the portfolio itself. Because: </span>
         <span class="c1">#  Each contract/bet pays 1. </span>
         <span class="c1">#  My wealth saved in the pocket is included in the portfolio.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span><span class="o">=</span> <span class="n">portfolio</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wealth</span><span class="o">=</span> <span class="n">portfolio</span>
 </pre></div>
 
     </div>
@@ -15474,48 +15462,48 @@ width=1000
 
 <span class="k">class</span> <span class="nc">Market</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">betPropensity</span><span class="p">,</span><span class="n">pEvent</span><span class="p">,</span><span class="n">agents</span><span class="p">,</span><span class="n">seed</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">betPropensity</span><span class="o">=</span><span class="n">betPropensity</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pEvent</span><span class="o">=</span><span class="n">pEvent</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">=</span><span class="n">agents</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">priceT</span><span class="o">=</span><span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">evtAtT</span><span class="o">=</span><span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bet_propensity</span><span class="o">=</span><span class="n">betPropensity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pEvent</span><span class="o">=</span><span class="n">pEvent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="o">=</span><span class="n">agents</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t</span><span class="o">=</span><span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_priceT</span><span class="o">=</span><span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_evtT</span><span class="o">=</span><span class="kc">False</span>
         <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">performOneStep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">updateAggregateMeasures</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sampleGlobalProbabilisticVariables</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">updateAgents</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">normalizeAgentsMeasures</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">perform_one_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_t</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_aggregate_measures</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sample_global_probabilistic_variables</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_agents</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_agents_measures</span><span class="p">()</span>
         
-    <span class="k">def</span> <span class="nf">updateAggregateMeasures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">priceT</span><span class="o">=</span><span class="mi">0</span>
-        <span class="k">for</span> <span class="n">agenti</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">priceT</span> <span class="o">+=</span> <span class="n">agenti</span><span class="o">.</span><span class="n">getBelief</span><span class="p">()</span><span class="o">*</span><span class="n">agenti</span><span class="o">.</span><span class="n">getWealth</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">_update_aggregate_measures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_priceT</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">agenti</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_priceT</span> <span class="o">+=</span> <span class="n">agenti</span><span class="o">.</span><span class="n">get_belief</span><span class="p">()</span><span class="o">*</span><span class="n">agenti</span><span class="o">.</span><span class="n">get_wealth</span><span class="p">()</span>
         <span class="c1">#print(&#39;New priceT&#39;,self.priceT)</span>
             
-    <span class="k">def</span> <span class="nf">sampleGlobalProbabilisticVariables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">evtAtT</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pEvent</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_sample_global_probabilistic_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_evtT</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pEvent</span><span class="p">)</span>
         <span class="c1">#if self.evtAtT:</span>
         <span class="c1">#    print(&#39;!!!evt happened!!!&#39;)</span>
         
-    <span class="k">def</span> <span class="nf">updateAgents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
-            <span class="n">agent</span><span class="o">.</span><span class="n">updateWealth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">evtAtT</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">betPropensity</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">priceT</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_update_agents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>
+            <span class="n">agent</span><span class="o">.</span><span class="n">update_wealth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_evtT</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_bet_propensity</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_priceT</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">normalizeAgentsMeasures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_normalize_agents_measures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">totW</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
-            <span class="n">totW</span> <span class="o">+=</span> <span class="n">agent</span><span class="o">.</span><span class="n">getWealth</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
-            <span class="n">agent</span><span class="o">.</span><span class="n">normalizeWealth</span><span class="p">(</span><span class="n">totW</span><span class="p">);</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>
+            <span class="n">totW</span> <span class="o">+=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_wealth</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">:</span>
+            <span class="n">agent</span><span class="o">.</span><span class="n">normalize_wealth</span><span class="p">(</span><span class="n">totW</span><span class="p">);</span>
             
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">descr</span> <span class="o">=</span> <span class="s1">&#39;t=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
-        <span class="n">descr</span><span class="o">+=</span> <span class="s1">&#39; priceT=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">priceT</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">)):</span>
-            <span class="n">w</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">getWealth</span><span class="p">(),</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">descr</span> <span class="o">=</span> <span class="s1">&#39;t=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_t</span><span class="p">)</span>
+        <span class="n">descr</span><span class="o">+=</span> <span class="s1">&#39; priceT=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_priceT</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">)):</span>
+            <span class="n">w</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_agents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_wealth</span><span class="p">(),</span><span class="mi">2</span><span class="p">))</span>
             <span class="n">descr</span><span class="o">+=</span><span class="s2">&quot; w&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;=&quot;</span><span class="o">+</span><span class="n">w</span>
         <span class="k">return</span> <span class="n">descr</span>
 </pre></div>
@@ -15553,15 +15541,15 @@ width=1000
 <span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 
-<span class="c1"># for step in range(35):</span>
-<span class="c1">#     print(&#39;Step&#39;,str(step+1))</span>
-<span class="c1">#     market.performOneStep()</span>
-<span class="c1">#     print(market)</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">35</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">market</span><span class="o">.</span><span class="n">perform_one_step</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
-    <span class="n">market</span><span class="o">.</span><span class="n">performOneStep</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># for step in range(100000):</span>
+<span class="c1">#     market.perform_one_step()</span>
+<span class="c1"># print(market)</span>
+<span class="c1"># print()</span>
 </pre></div>
 
     </div>
@@ -15582,9 +15570,111 @@ width=1000
 t=0 priceT=0
    w0=0.5 w1=0.5
 
-t=100000 priceT=0.65
+Step 1
+t=1 priceT=0.6
+   w0=0.58 w1=0.42
+Step 2
+t=2 priceT=0.63
+   w0=0.66 w1=0.34
+Step 3
+t=3 priceT=0.66
+   w0=0.73 w1=0.27
+Step 4
+t=4 priceT=0.69
+   w0=0.79 w1=0.21
+Step 5
+t=5 priceT=0.71
+   w0=0.83 w1=0.17
+Step 6
+t=6 priceT=0.73
+   w0=0.87 w1=0.13
+Step 7
+t=7 priceT=0.75
+   w0=0.9 w1=0.1
+Step 8
+t=8 priceT=0.76
+   w0=0.83 w1=0.17
+Step 9
+t=9 priceT=0.73
+   w0=0.87 w1=0.13
+Step 10
+t=10 priceT=0.75
+   w0=0.9 w1=0.1
+Step 11
+t=11 priceT=0.76
+   w0=0.82 w1=0.18
+Step 12
+t=12 priceT=0.73
+   w0=0.86 w1=0.14
+Step 13
+t=13 priceT=0.74
+   w0=0.77 w1=0.23
+Step 14
+t=14 priceT=0.71
+   w0=0.82 w1=0.18
+Step 15
+t=15 priceT=0.73
+   w0=0.86 w1=0.14
+Step 16
+t=16 priceT=0.74
+   w0=0.89 w1=0.11
+Step 17
+t=17 priceT=0.76
+   w0=0.92 w1=0.08
+Step 18
+t=18 priceT=0.77
+   w0=0.85 w1=0.15
+Step 19
+t=19 priceT=0.74
+   w0=0.89 w1=0.11
+Step 20
+t=20 priceT=0.75
+   w0=0.8 w1=0.2
+Step 21
+t=21 priceT=0.72
    w0=0.69 w1=0.31
-
+Step 22
+t=22 priceT=0.68
+   w0=0.75 w1=0.25
+Step 23
+t=23 priceT=0.7
+   w0=0.63 w1=0.37
+Step 24
+t=24 priceT=0.65
+   w0=0.7 w1=0.3
+Step 25
+t=25 priceT=0.68
+   w0=0.76 w1=0.24
+Step 26
+t=26 priceT=0.7
+   w0=0.81 w1=0.19
+Step 27
+t=27 priceT=0.73
+   w0=0.7 w1=0.3
+Step 28
+t=28 priceT=0.68
+   w0=0.76 w1=0.24
+Step 29
+t=29 priceT=0.71
+   w0=0.64 w1=0.36
+Step 30
+t=30 priceT=0.66
+   w0=0.51 w1=0.49
+Step 31
+t=31 priceT=0.6
+   w0=0.38 w1=0.62
+Step 32
+t=32 priceT=0.55
+   w0=0.28 w1=0.72
+Step 33
+t=33 priceT=0.51
+   w0=0.35 w1=0.65
+Step 34
+t=34 priceT=0.54
+   w0=0.25 w1=0.75
+Step 35
+t=35 priceT=0.5
+   w0=0.33 w1=0.67
 </pre>
 </div>
 </div>
@@ -15624,13 +15714,13 @@ t=100000 priceT=0.65
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">NoiseTraderAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">consult_horoscope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">belief</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">_consult_horoscope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_belief</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
         <span class="c1">#print(&#39;The horoscope tells me&#39;,self.belief)</span>
         
-    <span class="k">def</span> <span class="nf">updateWealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">evtAtT</span><span class="p">,</span><span class="n">betPropensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">consult_horoscope</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">updateWealth</span><span class="p">(</span><span class="n">evtAtT</span><span class="p">,</span><span class="n">betPropensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">update_wealth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">evtT</span><span class="p">,</span><span class="n">bet_propensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_consult_horoscope</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update_wealth</span><span class="p">(</span><span class="n">evtT</span><span class="p">,</span><span class="n">bet_propensity</span><span class="p">,</span><span class="n">priceT</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15670,11 +15760,11 @@ t=100000 priceT=0.65
 
 <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">35</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">market</span><span class="o">.</span><span class="n">performOneStep</span><span class="p">()</span>
+    <span class="n">market</span><span class="o">.</span><span class="n">perform_one_step</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">market</span><span class="p">)</span>
 
 <span class="c1"># for step in range(100000):</span>
-<span class="c1">#     market.performOneStep()</span>
+<span class="c1">#     market.perform_one_step()</span>
 <span class="c1"># print(market)</span>
 </pre></div>
 
@@ -15805,6 +15895,19 @@ t=35 priceT=0.87
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
